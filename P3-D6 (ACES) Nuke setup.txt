@@ -1,0 +1,15 @@
+#-------------------------------------
+# code by José G.
+# contact: josegabrielhb.3d@gmail.com
+# 01/11/2024
+# enjoy!
+#-------------------------------------
+
+def setup_project_settings():
+    nuke.root()['format'].setValue('HD_1080')
+    nuke.root()['colorManagement'].setValue('OCIO')
+    nuke.root()['OCIO_config'].setValue('aces_1.2')
+    nuke.root()['monitorLut'].setValue('P3-D60 (ACES)')
+    nuke.root()['monitorOutLUT'].setValue('P3-D60 (ACES)')
+    nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
+setup_project_settings()
