@@ -6,10 +6,22 @@
 #-------------------------------------
 
 import nuke
-def setup_project_settings():
+
+def p3d60_setup():
+
+#COLOR MANAGEMENT
     nuke.root()['colorManagement'].setValue('OCIO')
+
+#OCIO CONFIG
     nuke.root()['OCIO_config'].setValue('aces_1.2')
+
+#THUMBNAILS
     nuke.root()['monitorLut'].setValue('P3-D60 (ACES)')
+
+#MONITOR OUT
     nuke.root()['monitorOutLUT'].setValue('P3-D60 (ACES)')
+
+#VIEWER PROCESS
     nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
-setup_project_settings()
+
+p3d60_setup()
