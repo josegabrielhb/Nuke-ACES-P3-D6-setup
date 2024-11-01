@@ -5,6 +5,7 @@
 # enjoy!
 #-------------------------------------
 
+import nuke
 def setup_project_settings():
     nuke.root()['colorManagement'].setValue('OCIO')
     nuke.root()['OCIO_config'].setValue('aces_1.2')
