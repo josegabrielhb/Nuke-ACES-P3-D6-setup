@@ -7,21 +7,45 @@
 
 import nuke
 
-def p3d60_setup():
+def P3_DX(choice):
 
-#COLOR MANAGEMENT
-    nuke.root()['colorManagement'].setValue('OCIO')
+nuke.root()['colorManagement'].setValue('OCIO')
 
-#OCIO CONFIG
-    nuke.root()['OCIO_config'].setValue('aces_1.2')
+nuke.root()['OCIO_config'].setValue('aces_1.2')
 
-#THUMBNAILS
-    nuke.root()['monitorLut'].setValue('P3-D60 (ACES)')
 
-#MONITOR OUT
-    nuke.root()['monitorOutLUT'].setValue('P3-D60 (ACES)')
+if choice == 'P3-D60':
 
-#VIEWER PROCESS
-    nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
+nuke.root()['monitorLut'].setValue('P3-D60 (ACES)')
 
-p3d60_setup()
+nuke.root()['monitorOutLUT'].setValue('P3-D60 (ACES)')
+
+nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
+
+
+elif choice == 'P3-D65':
+
+nuke.root()['monitorLut'].setValue('P3-D65 (ACES)')
+
+nuke.root()['monitorOutLUT'].setValue('P3-D65 (ACES)')
+
+nuke.activeViewer().node()['viewerProcess'].setValue('P3D65 (ACES)')
+
+
+def colorspace_panel():
+
+panel = nuke.Panel("Select ColorSpace")
+
+panel.addEnumerationPulldown("select color space:", "P3-D60 P3-D65")
+
+if panel.show():
+
+choice = panel.value("select color space:")
+
+
+P3_DX(choice)
+
+
+colorspace_panel()
+
+
