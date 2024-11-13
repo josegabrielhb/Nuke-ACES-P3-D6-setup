@@ -17,8 +17,8 @@ def P3_DX(choice):
         nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
 
     elif choice == 'P3-D65':
-        nuke.root()['monitorLut'].setValue('P3-D65 (ACES)')
-        nuke.root()['monitorOutLUT'].setValue('P3-D65 (ACES)')
+        nuke.root()['monitorLut'].setValue('P3D65 (ACES)')
+        nuke.root()['monitorOutLUT'].setValue('P3D65 (ACES)')
         nuke.activeViewer().node()['viewerProcess'].setValue('P3D65 (ACES)')
 
 def colorspace_panel():
