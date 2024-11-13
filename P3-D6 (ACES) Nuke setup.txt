@@ -22,7 +22,7 @@ def P3_D6(choice):
         nuke.activeViewer().node()['viewerProcess'].setValue('P3D65 (ACES)')
 
 def colorspace_panel():
-    panel = nuke.Panel("Select ColorSpace")
+    panel = nuke.Panel("color space")
     panel.addEnumerationPulldown("select color space:", "P3-D60 P3D65")
     if panel.show():
         choice = panel.value("select color space:")
