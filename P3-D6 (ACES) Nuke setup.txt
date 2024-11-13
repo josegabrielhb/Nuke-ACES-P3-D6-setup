@@ -7,7 +7,7 @@
 
 import nuke
 
-def P3_DX(choice):
+def P3_D6(choice):
     nuke.root()['colorManagement'].setValue('OCIO')
     nuke.root()['OCIO_config'].setValue('aces_1.2')
 
@@ -26,7 +26,7 @@ def colorspace_panel():
     panel.addEnumerationPulldown("select color space:", "P3-D60 P3-D65")
     if panel.show():
         choice = panel.value("select color space:")
-    P3_DX(choice)
+    P3_D6(choice)
 
 colorspace_panel()
 
