@@ -24,10 +24,8 @@ def P3_DX(choice):
 def colorspace_panel():
     panel = nuke.Panel("Select ColorSpace")
     panel.addEnumerationPulldown("select color space:", "P3-D60 P3-D65")
-
     if panel.show():
         choice = panel.value("select color space:")
-
     P3_DX(choice)
 
 colorspace_panel()
