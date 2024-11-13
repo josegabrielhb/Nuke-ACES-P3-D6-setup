@@ -16,14 +16,14 @@ def P3_D6(choice):
         nuke.root()['monitorOutLUT'].setValue('P3-D60 (ACES)')
         nuke.activeViewer().node()['viewerProcess'].setValue('P3-D60 (ACES)')
 
-    elif choice == 'P3-D65':
+    elif choice == 'P3D65':
         nuke.root()['monitorLut'].setValue('P3D65 (ACES)')
         nuke.root()['monitorOutLUT'].setValue('P3D65 (ACES)')
         nuke.activeViewer().node()['viewerProcess'].setValue('P3D65 (ACES)')
 
 def colorspace_panel():
     panel = nuke.Panel("Select ColorSpace")
-    panel.addEnumerationPulldown("select color space:", "P3-D60 P3-D65")
+    panel.addEnumerationPulldown("select color space:", "P3-D60 P3D65")
     if panel.show():
         choice = panel.value("select color space:")
     P3_D6(choice)
